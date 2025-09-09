@@ -1,0 +1,121 @@
+/* ========== VARIABLES GLOBALES ========== */
+:root {
+  --grid-cols: 10;
+  --grid-rows: 5;
+  --grid-gutter: 5mm;
+}
+
+/* ========== RESET Y BODY ========== */
+body {
+  background: #000000;
+  margin: 0;
+}
+
+/* ========== CONTENEDOR PRINCIPAL (.estructura) ========== */
+.estructura {
+  /* ocupa todo el viewport */
+  width: 100vw;
+  height: 100vh;
+
+  /* grid */
+  display: grid;
+  column-gap: var(--grid-gutter);
+  row-gap:    var(--grid-gutter);
+
+  /* columnas y filas iguales restando gutters */
+  grid-template-columns:
+    repeat(var(--grid-cols),
+      calc((100% - (var(--grid-cols) - 1) * var(--grid-gutter)) / var(--grid-cols))
+    );
+  grid-template-rows:
+    repeat(var(--grid-rows),
+      calc((100% - (var(--grid-rows) - 1) * var(--grid-gutter)) / var(--grid-rows))
+    );
+}
+
+/* ========== FONDO INICIAL ========== */
+#inicio {
+  background: url("../Imagenes/72ppi/FNAF fONDO.jpg") center/cover no-repeat;
+}
+
+/* ========== TÍTULO Y POSTER ========== */
+#titulo {
+  grid-column: 3 / 8;
+  grid-row:    2 / 5;
+}
+
+.poster .date {
+  display: grid;
+  color: red;
+  font-size: 1.5rem;
+   grid-column: 3 / 3;
+  grid-row:    5 / 5;
+}
+
+.poster .tagline {
+  display: grid;
+  color: red;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+ grid-column: 5 / 5;
+  grid-row:    5 / 5;
+}
+
+/* Centrar el logo de Cines Unidos en la sección #inicio */
+.estructura.inicio .logo-cines {
+  /* ocupa toda la fila del grid */
+  grid-column: 1 / -1;
+
+  /* centra horizontal y verticalmente */
+  justify-self: center;
+  align-self: start;
+
+  /* opcional: ajusta su tamaño */
+  width: 150px;
+  height: auto;
+  padding: var(--grid-gutter);
+}
+
+.estructura.inicio .logo-blumhouse {
+  /* ocupa toda la fila del grid */
+  grid-column: 1 / -1;
+
+  /* centra horizontal y verticalmente */
+  justify-self: center;
+  align-self: end;
+
+  /* opcional: ajusta su tamaño */
+  width: 150px;
+  height: auto;
+  padding: var(--grid-gutter);
+}
+
+/* ========== SECCIONES SIGUIENTES ========== */
+#sinopsis,
+
+
+
+.trailer {
+  background-image: url('../Imagenes/72ppi/Fondo Televisor .png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.trailer iframe {
+  width: 90%;
+  height: 84%;
+  border-radius: 16px; /* Opcional: bordes redondeados */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4); /* Opcional: sombra */
+  border: none;
+}
+#entradas {
+  /* heredan .estructura: cada sección usa la misma retícula */
+}
