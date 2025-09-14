@@ -143,7 +143,7 @@
       <div id="titulo_entradas">
         <p class="titulo_e">COMPRA TUS ENTRADAS AQUÍ</p>
       </div>
-
+      
       <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
         <swiper-slide></swiper-slide>
         <swiper-slide></swiper-slide>
@@ -153,14 +153,29 @@
         <swiper-slide></swiper-slide>
       </swiper-container>
 
-      <!-- SCRIPT para usar el slider-->
+
+    <!-- SCRIPT para usar el slider-->
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+    <!-- SCRIPT para que se desliza y suene al movimiento  -->
+
+    <audio id="slideSound" src="./audios/swipe-sound-effect.mp3"></audio>
+    <script>
+      document.querySelectorAll('swiper-slide').forEach(slide => {
+        slide.addEventListener('mouseenter', () => {
+          const audio = document.getElementById('slideSound');
+          audio.pause();           // Pausa si está sonando
+          audio.currentTime = 0;   // Reinicia el audio
+          audio.play();            // Reproduce el sonido
+        });
+      });
+    </script>
 
 
       <div class="cines_unidos_tickets">
         <a href="https://www.cinesunidos.com/pelicula/HO00005602?city=caracas">
-          <img src="./Imagenes/1x/CinesUnidos2.png" alt="">
+          <img src="./Imagenes/svg/SVG/Cines_Unidos_Che.svg" alt="">
         </a>
       </div>
     </div>
