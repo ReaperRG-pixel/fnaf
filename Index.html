@@ -68,7 +68,9 @@
     inicio: new Audio('./audios/Freedy_Sound.mp3'),
     sinopsis: new Audio('./audios/Puppet_Sound.mp3'),
     trailer: new Audio('./audios/Monitor_Sound.mp3'),
-    entradas: new Audio('./audios/Balloon_Boy_Sound.mp3')
+    entradas: new Audio('./audios/Balloon_Boy_Sound.mp3'),
+    entradas_2: new Audio('./audios/FNAF_Kids Cheering.mp3')
+
   };
 
   // Función para pausar todos los sonidos
@@ -134,7 +136,7 @@
     <!-- Aquí irá tu contenido de sinopsis -->
 
     <button id="btnSinopsis">
-      <img src="Imagenes/72ppi/1x/Poster Sinopsis.png" alt="Ver Sinopsis" style="width:100%;max-width:300px;display:block;">
+      <img src="Imagenes/72ppi/1x/Poster Sinopsis.png" alt="Ver Sinopsis">
     </button>
     <!-- SCRIPT DE SINOPSIS -->
     <script>
@@ -194,10 +196,6 @@
   <div class="estructura entradas" id="entradas">
     <!-- Aquí el call-to-action para comprar tickets -->
       
-      <div id="titulo_entradas">
-        <p class="titulo_e">COMPRA TUS ENTRADAS AQUÍ</p>
-      </div>
-      
       <swiper-container class="mySwiper" effect="cards" grab-cursor="true">
         <swiper-slide></swiper-slide>
         <swiper-slide></swiper-slide>
@@ -226,10 +224,22 @@
       });
     </script>
 
+    <div class="baloon-boy" id="baloon-boy">
+        <img src="./Imagenes/72ppi/1x/Baloon_Boy_1.png" alt="Baloon Boy">
+    </div>
+
+    <script>
+      // Usa el mismo objeto de sonidos del sidebar
+      document.getElementById('baloon-boy').addEventListener('mouseenter', function() {
+        sounds.entradas_2.currentTime = 0;
+        sounds.entradas_2.play();
+      });
+    </script>
+
 
       <div class="cines_unidos_tickets">
         <a href="https://www.cinesunidos.com/pelicula/HO00005602?city=caracas">
-          <img src="./Imagenes/svg/SVG/Cines_Unidos_Che.svg" alt="">
+          <img src="./Imagenes/svg/SVG/Cines_Unidos_Che.svg" alt="cines unidos 2">
         </a>
       </div>
     </div>
