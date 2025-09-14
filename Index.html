@@ -6,6 +6,10 @@
   <title>Five Nights at Freddy's 2</title>
   <link rel="stylesheet" href="./css/estilos.css" />
 
+  <!--  FNAF Icon Navegador -->
+  <link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=NNdce6F4oX2X&format=png&color=000000" />
+
+
   <!-- REF to animate css -->
 
   <link
@@ -13,10 +17,16 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 
+  <!-- REF to swipper -->
+  <link   rel="stylesheet"   href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script> 
+
 </head>
 <body>
 
   <!-- From Uiverse.io by MijailVillegas --> 
+
+  <!-- Script para reproducir sonidos diferentes en cada botón del sidebar -->
+
    <!-- SideBar -->
   <div class="card">
     <ul>
@@ -46,6 +56,52 @@
       </li>
     </ul>
   </div>
+
+  <!-- Script de sonido del sidebar -->
+
+  <script>
+  // Audios personalizados para cada botón
+  const sounds = {
+    inicio: new Audio('./audios/Freedy_Sound.mp3'),
+    sinopsis: new Audio('./audios/Puppet_Sound.mp3'),
+    trailer: new Audio('./audios/Monitor_Sound.mp3'),
+    entradas: new Audio('./audios/Balloon_Boy_Sound.mp3')
+  };
+
+  // Función para pausar todos los sonidos
+  function stopAllSounds(except) {
+    Object.keys(sounds).forEach(key => {
+      if (key !== except) {
+        sounds[key].pause();
+        sounds[key].currentTime = 0;
+      }
+    });
+  }
+
+  // Espera a que el DOM esté listo
+  window.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('a[href="#inicio"]').addEventListener('mouseenter', () => {
+      stopAllSounds('inicio');
+      sounds.inicio.currentTime = 0;
+      sounds.inicio.play();
+    });
+    document.querySelector('a[href="#sinopsis"]').addEventListener('mouseenter', () => {
+      stopAllSounds('sinopsis');
+      sounds.sinopsis.currentTime = 0;
+      sounds.sinopsis.play();
+    });
+    document.querySelector('a[href="#trailer"]').addEventListener('mouseenter', () => {
+      stopAllSounds('trailer');
+      sounds.trailer.currentTime = 0;
+      sounds.trailer.play();
+    });
+    document.querySelector('a[href="#entradas"]').addEventListener('mouseenter', () => {
+      stopAllSounds('entradas');
+      sounds.entradas.currentTime = 0;
+      sounds.entradas.play();
+    });
+  });
+</script>
 
   <!-- Sección 1: Inicio -->
   <div 
