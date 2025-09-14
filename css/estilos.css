@@ -116,13 +116,91 @@ body {
   box-shadow: 0 4px 24px rgba(0,0,0,0.4); /* Opcional: sombra */
   border: none;
 }
+/* =============== ENTRADAS ======================= */
+
 #entradas {
   /* heredan .estructura: cada sección usa la misma retícula */
+  background-image: url('../Imagenes/1x/FondoTickets.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
 }
 
+#titulo_entradas {
+  grid-column: 4 / 8;
+  grid-row:    3 / 4;
+  align-self: start;
+  justify-self: center;
+}
+
+.titulo_e {
+  display: grid;
+  color: red;
+  font-size: 2rem;
+  font-weight: bold;
+  align-self: center;
+  justify-self: center;
+}
+
+.cines_unidos_tickets {
+  grid-column: 5 / 10;
+  grid-row:    5 / 6;
+  display: grid;
+}
+
+/* SWIPPER DE LAS ENTRADAS */
+
+    swiper-container {
+      width: 240px;
+      height: 120px;
+      grid-column: 5 / 7;
+      grid-row:    4 / 5;
+    }
+
+    swiper-slide {
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    swiper-slide:nth-child(1n) {
+      background-image: url('../Imagenes/svg/SVG/Freddy_Ticket.svg');
+    }
+
+    swiper-slide:nth-child(2n) {
+      background-image: url('../Imagenes/svg/SVG/Bonnie_Ticket.svg');
+    }
+
+    swiper-slide:nth-child(3n) {
+      background-image: url('../Imagenes/svg/SVG/Chica_Ticket.svg');
+    }
+
+    swiper-slide:nth-child(4n) {
+      background-image: url('../Imagenes/svg/SVG/Foxy_Ticket.svg');
+    }
+
+    swiper-slide:nth-child(5n) {
+      background-image: url('../Imagenes/svg/SVG/Cupckake_Ticket.svg');
+    }
+
+    swiper-slide:nth-child(6n) {
+      background-image: url('../Imagenes/svg/SVG/Golden_Freddy_Ticket.svg');
+    }
 
 
-/* SIDE BAR */
+
+/* ==================== SIDE BAR ======================= */
 
 /* From Uiverse.io by MijailVillegas */ 
 .card {
