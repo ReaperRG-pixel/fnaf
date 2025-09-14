@@ -90,8 +90,32 @@ body {
   padding: var(--grid-gutter);
 }
 
-/* ========== SECCIONES SIGUIENTES ========== */
+/* ========== SECCIONES SINOPSIS ========== */
 #sinopsis,
+
+.estructura_sinopsis {
+  background-image: url('../Imagenes/72ppi/1x/Fondo_Cast.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+.btnSinopsis {
+  display: grid;
+  grid-column: 5 / 7;
+  grid-row:    4 / 7;
+}
+
+.swal2-confirm-black {
+    color: #111 !important;
+}
 
 
 
@@ -155,7 +179,7 @@ body {
   display: grid;
 }
 
-/* SWIPPER DE LAS ENTRADAS */
+/* SWIPPER DE LAS ENTRADAS DE TICKETS*/
 
     swiper-container {
       width: 240px;

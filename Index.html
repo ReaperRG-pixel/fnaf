@@ -19,6 +19,10 @@
   <!-- REF to swipper -->
   <link   rel="stylesheet"   href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script> 
 
+  <!-- REF SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="sweetalert2.all.min.js"></script>
+
 </head>
 <body>
 
@@ -126,8 +130,58 @@
   </div>
 
   <!-- Sección 2: Sinopsis -->
-  <div class="estructura sinopsis" id="sinopsis">
+  <div class="estructura_sinopsis" id="sinopsis">
     <!-- Aquí irá tu contenido de sinopsis -->
+
+    <button id="btnSinopsis">
+      <img src="Imagenes/72ppi/1x/Poster Sinopsis.png" alt="Ver Sinopsis" style="width:100%;max-width:300px;display:block;">
+    </button>
+    <!-- SCRIPT DE SINOPSIS -->
+    <script>
+      document.getElementById('btnSinopsis').addEventListener('click', function() {
+        Swal.fire({
+          title: 'Sinopsis',
+          width: 600,
+          padding: '2em',
+          color: '#fff',
+          background: "url('./Imagenes/72ppi/1x/Textura.png') center/cover no-repeat",
+          html: `
+            <div style="
+              padding: 32px;
+              border-radius: 8px;
+              color: #fff;
+              font-size: 1.1em;">
+              Un año después de los eventos en la pizzería de Freddy Fazbear, la historia se ha convertido en una leyenda local.
+              <br>
+              <br>
+              Mike y Vanessa han ocultado la verdad a Abby, pero cuando ella busca reencontrarse con los animatrónicos, se desatan nuevos y aterradores secretos sobre el origen de Freddy's.
+            </div>
+          `,
+
+          iconHtml: '<img src="./Imagenes/svg/SVG/Freddy_Fazbear_Icon_1.svg" alt="Freddy" style="width:80px;height:80px;box-shadow:none;border:none;background:none;">',
+
+          confirmButtonText: 'Cerrar',
+          confirmButtonColor: '#FFE772', // Amarillo
+          customClass: {
+            confirmButton: 'swal2-confirm-black'
+          },
+          showClass: {
+            popup: `
+              animate__animated
+              animate__fadeInUp
+              animate__faster
+            `
+          },
+          hideClass: {
+            popup: `
+              animate__animated
+              animate__fadeOutDown
+              animate__faster
+            `
+          }
+        });
+      });
+    </script>
   </div>
 
   <!-- Sección 3: Trailer -->
