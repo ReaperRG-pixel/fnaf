@@ -134,12 +134,51 @@
   </div>
 
   <!-- Sección 2: Sinopsis -->
-  <div class="estructura_sinopsis" id="sinopsis">
+  <div class="estructura estructura_sinopsis" id="sinopsis">
     <!-- Aquí irá tu contenido de sinopsis -->
-
-    <button id="btnSinopsis">
-      <img src="Imagenes/72ppi/1x/Poster Sinopsis.png" alt="Ver Sinopsis">
+    <button class="btnSinopsis" id="btnSinopsis">
+      <img class="btnSinopsisImage"  src="Imagenes/72ppi/1x/Poster Sinopsis.png" alt="Ver Sinopsis">
     </button>
+
+  <swiper-container
+    class="mySwiperSinopsis swiper-container-cast"
+    effect="coverflow"
+    grab-cursor="true"
+    loop="true"
+    slides-per-view="auto"
+    coverflow-effect-rotate="30"
+    coverflow-effect-stretch="0"
+    coverflow-effect-depth="100"
+    coverflow-effect-modifier="1"
+    >
+
+    <swiper-slide class="sinopsis-slide sinopsis-slide-1"> </swiper-slide>
+    <swiper-slide class="sinopsis-slide sinopsis-slide-2"> </swiper-slide>
+    <swiper-slide class="sinopsis-slide sinopsis-slide-3"> </swiper-slide>
+    <swiper-slide class="sinopsis-slide sinopsis-slide-4"> </swiper-slide>
+    <!-- Agrega más slides según tu galería de personajes -->
+
+  </swiper-container>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiperSinopsis", {
+      grabCursor: true,
+      effect: "creative",
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: [0, 0, -400],
+        },
+        next: {
+          translate: ["100%", 0, 0],
+        },
+      },
+    });
+  </script>
+
     <!-- SCRIPT DE SINOPSIS -->
     <script>
       document.getElementById('btnSinopsis').addEventListener('click', function() {
