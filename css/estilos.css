@@ -44,23 +44,27 @@ body {
   grid-row:    2 / 5;
 }
 
-.poster .date {
-  display: grid;
+ .date {
+  
   color: red;
   font-size: 1.5rem;
    grid-column: 3 / 3;
-  grid-row:    5 / 5;
+  grid-row:    4 / 4;
+  margin: 0;
+  align-self: last baseline;
+  padding: var(--grid-gutter);
 }
 
-.poster .tagline {
-  display: grid;
+.tagline {
+ margin: 0;
   color: red;
-  font-size: 1rem;
+  font-size: 1.5rem; 
   letter-spacing: 0.1rem;
- grid-column: 5 / 5;
-  grid-row:    5 / 5;
-}
-
+ grid-column: 5 / 6;
+  grid-row:    4 / 4;
+  align-self: last baseline;
+  
+  }
 /* Centrar el logo de Cines Unidos en la sección #inicio */
 .estructura.inicio .logo-cines {
   /* ocupa toda la fila del grid */
@@ -78,7 +82,7 @@ body {
 
 .estructura.inicio .logo-blumhouse {
   /* ocupa toda la fila del grid */
-  grid-column: 1 / -1;
+  grid-column: 5 / 7;
 
   /* centra horizontal y verticalmente */
   justify-self: center;
